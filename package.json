@@ -1,10 +1,9 @@
 {
   "name": "vite_vue_starter",
-  "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vue-tsc && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

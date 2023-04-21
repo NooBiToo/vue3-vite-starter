@@ -1,0 +1,17 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": "@antfu",
+  "rules": {
+    "no-console": "off",
+    "vue/no-template-shadow": ["off"],
+    "vue/v-on-event-hyphenation": 0,
+    "vue/component-tags-order": [
+      "error",
+      {
+        "order": ["template", "script", "style"]
+      }
+    ]
+  }
+}

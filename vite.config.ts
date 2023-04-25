@@ -1,14 +1,10 @@
-import { fileURLToPath } from 'node:url'
-import path from 'node:path'
+import { resolve } from 'path';
 import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver, ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-
-const filename = fileURLToPath(import.meta.url)
-const pathSegments = path.dirname(filename)
 
 export default defineConfig({
   server: {
@@ -17,7 +13,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(pathSegments, './src'),
+      '@' : resolve(__dirname, './src'),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.sass'],
   },

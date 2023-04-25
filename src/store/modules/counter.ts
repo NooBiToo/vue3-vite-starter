@@ -10,7 +10,7 @@ export const useCounterStore = defineStore('counter', {
 			this.count++;
 		}
 	}
-});1	
+});
 
 export function useCounterStoreWithOut() {
   return useCounterStore(store);

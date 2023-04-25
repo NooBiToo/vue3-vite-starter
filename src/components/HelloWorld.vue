@@ -2,9 +2,9 @@
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="store.increment()">
+    <a-button type="primary" @click="store.increment()">
       count is {{ store.count }}
-    </button>
+    </a-button>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR

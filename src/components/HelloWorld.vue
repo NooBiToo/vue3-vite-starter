@@ -28,9 +28,9 @@
 <script setup lang="ts">
 import { useCounterStore } from '@/store/modules/counter'
 
-const store = useCounterStore()
-
 defineProps<{ msg: string }>()
+
+const store = useCounterStore()
 </script>
 
 <style lang="sass" scoped>

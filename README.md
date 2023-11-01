@@ -22,3 +22,9 @@ yarn build
 ```
 yarn test
 ```
+
+## Config
+if need TS
+`Components({
+    dts: true
+})`

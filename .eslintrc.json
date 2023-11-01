@@ -1,16 +1,45 @@
 {
+  "root": true,
   "env": {
     "node": true
   },
-  "extends": "@antfu",
+  "extends": [
+    "@antfu"
+  ],
   "rules": {
     "no-console": "off",
+    "curly": ["error", "all"],
+    "antfu/top-level-function": "off",
+    "@typescript-eslint/no-invalid-this": "off",
+    "@typescript-eslint/no-this-alias": "off",
+    "unused-imports/no-unused-imports": "off",
     "vue/no-template-shadow": ["off"],
     "vue/v-on-event-hyphenation": 0,
     "vue/component-tags-order": [
       "error",
       {
         "order": ["template", "script", "style"]
+      }
+    ],
+    "vue/block-order": ["error", {
+      "order": [["template", "script"], "style"]
+    }],
+    "vue/attributes-order": [
+      "error",
+      {
+        "order": [
+          "DEFINITION",
+          "CONDITIONALS",
+          "OTHER_ATTR",
+          "LIST_RENDERING",
+          "RENDER_MODIFIERS",
+          "GLOBAL",
+          ["UNIQUE", "SLOT"],
+          "TWO_WAY_BINDING",
+          "OTHER_DIRECTIVES",
+          "EVENTS",
+          "CONTENT"
+        ]
       }
     ]
   }

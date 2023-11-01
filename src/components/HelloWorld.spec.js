@@ -1,12 +1,12 @@
 import { mount } from '@vue/test-utils'
-import { expect, it, describe, beforeEach } from 'vitest'
-import { setActivePinia, createPinia } from 'pinia'
-import { useCounterStore } from '@/store/modules/counter'
+import { beforeEach, describe, expect, it } from 'vitest'
+import { createPinia, setActivePinia } from 'pinia'
 import HelloWorld from './HelloWorld.vue'
+import { useCounterStore } from '@/store/modules/counter'
 
 beforeEach(() => {
   setActivePinia(createPinia())
-  useCounterStore();
+  useCounterStore()
 })
 
 describe('HelloWorld', () => {

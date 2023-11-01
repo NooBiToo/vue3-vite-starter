@@ -1,9 +1,9 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path'
 import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 import Components from 'unplugin-vue-components/vite'
-import { AntDesignVueResolver, ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import eslintPlugin from 'vite-plugin-eslint'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({
@@ -13,13 +13,14 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@' : resolve(__dirname, './src'),
+      '@': resolve(__dirname, './src'),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.sass'],
   },
   plugins: [
     vue(),
     vueJsx(),
+    eslintPlugin({ cache: false }),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
@@ -57,11 +58,7 @@ export default defineConfig({
       },
     }),
     Components({
-      dts: true,
-      resolvers: [
-        AntDesignVueResolver(),
-        ElementPlusResolver(),
-      ],
+      dts: false,
       types: [{
         from: 'vue-router',
         names: ['RouterLink', 'RouterView'],
@@ -79,7 +76,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       sass: {
-        additionalData: '@import "./src/styles/styles"',
+        additionalData: `
+          @import "@/styles/styles.sass"
+        `,
       },
     },
   },

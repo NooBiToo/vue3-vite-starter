@@ -1,5 +1,5 @@
-import { expect, it, describe, beforeEach } from 'vitest'
-import { setActivePinia, createPinia } from 'pinia'
+import { beforeEach, describe, expect, it } from 'vitest'
+import { createPinia, setActivePinia } from 'pinia'
 import { useCounterStore } from '@/store/modules/counter'
 
 describe('Counter Store', () => {
